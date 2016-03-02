@@ -1,0 +1,4 @@
+Working Title is a game about unfinished game. It's an RPG where the focus is the history of a player testing a game. It goes beyond expected and starts to find "unfinished" parts of the game where he shouldn't be. The jokes and drama starts slowly and it begins to have some meta jokes too.
+Initially it works pretty well, with names and stuff with no big mechanics and or levels just like a unfinished game. By the end, the player will be inside the game maker (if not possible, inside the computer) until it ends with a final tiny monologue of the developer sighing about <something>.
+
+Aesthetic = similar to pokemon
