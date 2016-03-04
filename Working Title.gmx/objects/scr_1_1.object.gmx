@@ -33,6 +33,104 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>50</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(obj_text_box) {
+    event_perform(ev_keyrelease, vk_space);
+    event_perform(ev_keyrelease, vk_space);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_user(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Calling event_user(0)
+
+event_user(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="11">
       <action>
@@ -44,20 +142,6 @@
         <useapplyto>-1</useapplyto>
         <exetype>1</exetype>
         <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>222</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_next_room</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
@@ -82,21 +166,19 @@
           <argument>
             <kind>1</kind>
             <string>///Dialogue sequence
-
-wantedspeed = 1.5;
-
+wanted_time = 1.5;
 switch (N) {
        case 0:
-            create_text_box("Developer", "Hey there!         #I'm the developer of this game.  #Thanks for stoping by!", wantedspeed, true, true);
+            with(obj_player){can_move = false};
+            create_text_box("Developer", "Well, first of all, you're this bald dude up there. To control it, you can use &lt;up&gt;, &lt;down&gt;, &lt;left&gt; and &lt;right&gt;. No mouse required. Go ahead and try it!", wanted_time, false, true);
+            instance_create(0,0,scr_1_1_aux1);
             break;
        case 1:
-            create_text_box("Developer", "I just want to thank you for accepting to test my game! I really apreciate that!#It's incomplete, there are a couple bugs in it, and that's why you're here!", wantedspeed, true, true);
+            //Wait for timer trigger after walking
             break;
        case 2:
-            create_text_box("Developer", "I mean, you are here to test my game. I want to know if you'll enjoy it, which bugs you'll find, and so on.", wantedspeed, true, true);
-            break;
-       case 3:
-            create_text_box("Developer", "*AHEM* So, let's begin? Let me load the next level.                     #Almost there...                       #Done! Just press space to go!", wantedspeed, true, true);
+            create_text_box("Developer", "Nice!", wanted_time, true, true);
+            alarm[2] = 100;
             break;
        default:
             event_user(1);

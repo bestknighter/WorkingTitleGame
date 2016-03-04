@@ -10,13 +10,24 @@
       <sprite>sprites\spr_text_light</sprite>
       <sprite>sprites\spr_text_dark</sprite>
     </sprites>
+    <sprites name="Player">
+      <sprite>sprites\spr_player_falling</sprite>
+      <sprite>sprites\spr_player_frontwalk</sprite>
+      <sprite>sprites\spr_player_backwalk</sprite>
+      <sprite>sprites\spr_player_leftwalk</sprite>
+      <sprite>sprites\spr_player_rightwalk</sprite>
+      <sprite>sprites\spr_player_standingstill</sprite>
+    </sprites>
+    <sprite>sprites\spr_col</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
+    <background>background\bg_MageCity</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\create_text_box.gml</script>
+    <script>scripts\update_sprite.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_8BIT_WONDER</font>
@@ -27,15 +38,24 @@
     <font>fonts\font_VerdanaBold</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_text_box</object>
     <objects name="Title">
       <object>objects\obj_pressplay</object>
       <object>objects\scr_intro</object>
     </objects>
-    <object>objects\obj_dialogue_scripting</object>
+    <object>objects\obj_player</object>
+    <objects name="Design">
+      <object>objects\obj_col</object>
+      <object>objects\obj_dialogue_scripting</object>
+      <object>objects\obj_text_box</object>
+    </objects>
+    <objects name="room_1">
+      <object>objects\scr_1_1</object>
+      <object>objects\scr_1_1_aux1</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_Title</room>
+    <room>rooms\room_title</room>
+    <room>rooms\room_1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
