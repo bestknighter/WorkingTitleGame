@@ -170,14 +170,14 @@ wanted_time = 1.5;
 switch (N) {
        case 0:
             with(obj_player){can_move = false};
-            create_text_box("Developer", "Well, first of all, you're this bald dude up there. To control it, you can use &lt;up&gt;, &lt;down&gt;, &lt;left&gt; and &lt;right&gt;. No mouse required. Go ahead and try it!", wanted_time, false, true);
+            create_text_box("Developer", 1, "WAIT!#Well, first of all, you're this bald dude up there. To control it, you can use &lt;up&gt;, &lt;down&gt;, &lt;left&gt; and &lt;right&gt;. No mouse required. Go ahead and try it!", wanted_time, false, true);
             instance_create(0,0,scr_1_1_aux1);
             break;
        case 1:
             //Wait for timer trigger after walking
             break;
        case 2:
-            create_text_box("Developer", "Nice!", wanted_time, true, true);
+            create_text_box("Developer", 1, "Nice!", wanted_time, true, true);
             alarm[2] = 100;
             break;
        default:

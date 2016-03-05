@@ -73,7 +73,7 @@ finished = false;
            event_perform(ev_keyrelease, vk_space);
        }
        with(scr_1_1) {
-           alarm[1] = 150;
+           alarm[1] = 100;
        }
        instance_destroy();
     }
