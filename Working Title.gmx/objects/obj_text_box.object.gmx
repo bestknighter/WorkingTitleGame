@@ -315,7 +315,7 @@ draw_text_ext(name_xoffset+x, name_yoffset+y, who_said, spacing, width);
             <kind>1</kind>
             <string>///Draw Dialogue
 
-draw_set_font(font_Verdana);
+draw_set_font(font);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_colour( make_colour_rgb(R,G,B) );

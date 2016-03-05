@@ -73,8 +73,8 @@ wanted_time = 1;
 
 switch (N) {
        case 0:
-            create_text_box("ERROR", "THIS IS A DIALOGUE SCRIPT NOT INITIALIZED!!!", wanted_time, true, true);
-            create_text_box("ERROR", "THIS IS A DIALOGUE SCRIPT NOT INITIALIZED!!!", wanted_time, false, false);
+            create_text_box("ERROR", 1, "THIS IS A DIALOGUE SCRIPT NOT INITIALIZED!!!", wanted_time, true, true);
+            create_text_box("ERROR", 1, "THIS IS A DIALOGUE SCRIPT NOT INITIALIZED!!!", wanted_time, false, false);
             break;
        case 2:
             event_user(1);

@@ -1,9 +1,10 @@
 ///Intanciating the text box
 who_said = argument0;
-text = argument1;
-speed_per_letter = argument2;
-is_top = argument3;
-is_light = argument4;
+font_weight = argument1;
+text = argument2;
+speed_per_letter = argument3;
+is_top = argument4;
+is_light = argument5;
 
 dy = (!is_top)*457;
 
@@ -33,6 +34,21 @@ if (is_light) {
     B = 130;
 }
 
+switch (font_weight) {
+       case 0: // ITALIC
+            font = font_VerdanaItalic;
+            break;
+       case 1: // NORMAL
+            font = font_Verdana;
+            break;
+       case 2: // BOLD
+            font = font_VerdanaBold;
+            break;
+       default: // Arg is font
+            font = font_weight;
+            break;
+}
+
 with ( instance_create(0,dy,obj_text_box) ){
       who_said = other.who_said;
       text = other.text;
@@ -50,4 +66,5 @@ with ( instance_create(0,dy,obj_text_box) ){
       G = other.G;
       B = other.B;
       creator = other.id;
+      font = other.font;
 }
