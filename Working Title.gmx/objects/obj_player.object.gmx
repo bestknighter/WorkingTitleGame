@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>5</string>
+            <string>6</string>
           </argument>
         </arguments>
       </action>
@@ -84,27 +84,32 @@ if (can_move) {
     var vdir = 0;
     var hdir = 0;
     
-    if (keyboard_check(vk_up)) {
-       vdir -= 5;
+    if (keyboard_check(vk_up) or keyboard_check(ord('W'))) {
+       vdir -= movspeed;
        key_pressed |= true;
     }
     
-    if (keyboard_check(vk_down)) {
-       vdir += 5;
+    if (keyboard_check(vk_down) or keyboard_check(ord('S'))) {
+       vdir += movspeed;
        key_pressed |= true;
     }
     
-    if (keyboard_check(vk_left)) {
-       hdir -= 5;
+    if (keyboard_check(vk_left) or keyboard_check(ord('A'))) {
+       hdir -= movspeed;
        key_pressed |= true;
     }
     
-    if (keyboard_check(vk_right)) {
-       hdir += 5;
+    if (keyboard_check(vk_right) or keyboard_check(ord('D'))) {
+       hdir += movspeed;
        key_pressed |= true;
     }
     if (key_pressed) {
-        mp_linear_step(x+hdir,y+vdir,movspeed,false);
+        if (!place_meeting(x+hdir,y,obj_col)) {
+           x += hdir;
+        }
+        if (!place_meeting(x,y+vdir,obj_col)) {
+           y += vdir;
+        }
     }
 }
 </string>
