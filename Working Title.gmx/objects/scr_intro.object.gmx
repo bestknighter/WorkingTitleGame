@@ -87,7 +87,7 @@ wantedspeed = 1.5;
 
 switch (N) {
        case 0:
-            create_text_box("Developer", 1, "Hey there!         #I'm the developer of this game.  #Thanks for stoping by!", wantedspeed, true, true);
+            create_text_box("Developer", 1, "Hey there!         #I'm the developer of this game.  #Thanks for stopping by!", wantedspeed, true, true);
             break;
        case 1:
             create_text_box("Developer", 1, "I just want to thank you for accepting to test my game! I really appreciate that!#It's incomplete and there are a couple bugs in it but that's why you're here!", wantedspeed, true, true);
@@ -96,7 +96,7 @@ switch (N) {
             create_text_box("Developer", 1, "I mean, you are here to test my game. I want to know if you'll enjoy it, which bugs you'll find, and so on.", wantedspeed, true, true);
             break;
        case 3:
-            create_text_box("Developer", 1, "*AHEM* So, let's begin?                #Let me load the next level.                           #Almost there...                       #Done! Just press space to go!", wantedspeed, true, true);
+            create_text_box("Developer", 1, "*AHEM* So, let's begin?         #Let me load the next level...                    #Almost there...                       #Done! Just press space to go!", wantedspeed, true, true);
             break;
        default:
             event_user(1);
